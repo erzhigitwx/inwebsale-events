@@ -1,0 +1,21 @@
+{
+  "creating events": "Создание мероприятия",
+  "event name": "Название мероприятия",
+  "type name": "Введите имя",
+  "leader name": "Имя ведущего",
+  "link to youtube translation": "Ссылка на YouTube трансляцию",
+  "paste link": "Вставьте ссылку",
+  "link to the stub": "Ссылка на заглушку",
+  "outside button(link)": "Внешняя кнопка (ссылка)",
+  "with pin": "По паролям",
+  "open": "Открытый",
+  "Access to the event": "Доступ к мероприятию",
+  "save event": "Сохранить в 'Мои мероприятия'",
+  "Start date and time": "Дата и время начала",
+  "presentation": "Презентация",
+  "loaded": "загружено",
+  "Download PDF": "Загрузить PDF",
+  "Save": "Сохранить",
+  "pin": "Пароль для входа:",
+  "success text": "Мероприятие успешно создано. Жди его начала и приглашай друзей!"
+}
