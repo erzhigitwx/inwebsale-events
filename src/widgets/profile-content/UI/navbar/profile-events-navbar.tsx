@@ -1,25 +1,17 @@
 import React, { FC } from "react";
 
-interface ProfileEventsNavbarProps {
-
-}
-
-const ProfileEventsNavbar: FC<ProfileEventsNavbarProps> = () => {
+const ProfileEventsNavbar = () => {
   return (
-    <div className={"flex flex-row justify-start items-center gap-32"}>
-      <div className={"flex flex-row justify-start items-center gap-6"}>
-        <p className={"text-gray text-medium text-base"}>№</p>
-        <p className={"text-gray text-medium text-base"}>Название</p>
-      </div>
-      <div className={"flex flex-row justify-start items-center gap-[20%]"}>
-        <p className={"text-gray text-medium text-base"}>Статус</p>
-        <p className={"text-gray text-medium text-base"}>Начало</p>
-        <p className={"text-gray text-medium text-base"}>Ведущий</p>
-        <p className={"text-gray text-medium text-base"}>Модератор</p>
-        <p className={"text-gray text-medium text-base"}>Доступ</p>
-        <p className={"text-gray text-medium text-base"}>Чат</p>
-        <p className={"text-gray text-medium text-base"}>Опции</p>
-      </div>
+    <div className="grid grid-cols-[0.3fr,1fr,1.2fr,0.8fr,1fr,1fr,1fr,1fr,1fr] gap-4 items-center text-gray text-medium text-base">
+      <p>№</p>
+      <p>Название</p>
+      <p>Статус</p>
+      <p>Начало</p>
+      <p>Ведущий</p>
+      <p>Модератор</p>
+      <p>Доступ</p>
+      <p>Чат</p>
+      <p>Опции</p>
     </div>
   );
 };

@@ -21,6 +21,7 @@ type TimeStampType = {
 
 export type EventType = {
   createdAt: TimeStampType,
+  id: string;
   email: string;
   eventDate: string;
   eventTime: string;

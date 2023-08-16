@@ -12,6 +12,7 @@ export const fetchEventsFx = createEffect<string, EventType[] | undefined>(async
 
     const collectionDocs = querySnapshot.docs.map(doc => {
       const data = doc.data() as EventType;
+      data.id = doc.id;
       return data;
     });
     return collectionDocs;

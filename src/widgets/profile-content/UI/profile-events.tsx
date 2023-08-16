@@ -32,12 +32,13 @@ const ProfileEvents: FC<ProfileEventsProps> = ({ t, isFetched, data }) => {
             <h1 className={"text-xl text-red"}>Something went wrong! Please try again later.</h1>
             : isFetched ?
               userEvents.length === 0 ?
-                <h1 className={"text-xl  dark:text-white"}>You <strong className={"text-red underline"}>don't</strong> have any events yet!&#128547; <Link href={"/create"} className={"text-2xl text-blue underline"}>Create an event</Link></h1>
+                <h1 className={"text-xl  dark:text-white"}>You <strong className={"text-red underline"}>don't</strong> have any events yet!&#128547; <Link href={"/create"} className={"text-2xl text-blue underline"}>Create an event</Link>
+                </h1>
                 :
                 <div>
                   <ProfileEventsNavbar/>
                   <div className={"mt-8 flex flex-col gap-6"}>
-                    {userEvents.reverse().map((event: EventType) =>
+                    {userEvents.map((event: EventType) =>
                       <ProfileEventsItem event={event} key={event.createdAt.seconds.toString()}/>
                     )}
                   </div>
