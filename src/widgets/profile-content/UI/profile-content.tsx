@@ -1,10 +1,8 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC, useState } from "react";
 import { Session } from "next-auth";
 import { useSession } from "next-auth/react";
 import { useTranslation } from "react-i18next";
 import { TFunction } from "i18next";
-// store
-import { fetchEventsFx, resetEvents } from "@/widgets/profile-content/model";
 // components
 import { ProfileEvents } from "@/widgets/profile-content/UI/profile-events";
 import { ModalImage } from "@/shared/UI";
@@ -12,16 +10,8 @@ import Image from "next/image";
 
 const ProfileContent: FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [isFetched, setIsFetched] = useState<boolean>(false);
   const { t }: { t: TFunction } = useTranslation("profile");
   const { data }: { data: Session | null } = useSession();
-
-  useEffect(() => {
-    fetchEventsFx("events").finally(() => setIsFetched(true));
-    return () => {
-      resetEvents();
-    };
-  }, []);
 
   return (
     <div className="grid grid-cols-10 gap-5 mt-6">
@@ -39,7 +29,7 @@ const ProfileContent: FC = () => {
           </div>
         </div>
       </div>
-      <ProfileEvents t={t} isFetched={isFetched} data={data}/>
+      <ProfileEvents t={t}/>
     </div>
   );
 };

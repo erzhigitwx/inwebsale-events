@@ -8,5 +8,4 @@ const Profile: FC = async () => {
     <ProfileContent/>
   );
 };
-
 export default Profile;

@@ -8,7 +8,7 @@ interface ButtonIndicatorProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 const ButtonIndicator: FC<ButtonIndicatorProps> = ({ children, className }) => {
   return (
     <li
-      className={`text-black text-medium text-base h-11 px-3 py-1.5 rounded-xl grid place-items-center list-none ${className}`}
+      className={`text-black text-medium text-base h-11 px-3 py-1.5 rounded-xl grid place-items-center list-none dark:prose-darkMode ${className}`}
     >
       {children}
     </li>

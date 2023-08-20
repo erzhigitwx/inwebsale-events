@@ -1,6 +1,6 @@
 import { deleteDoc, doc } from "@firebase/firestore";
 import { db } from "@/firebase";
-import { fetchEventsFx, resetEvents, setError } from "@/widgets/profile-content/model";
+import { fetchEventsFx, resetEvents, setError } from "../model";
 
 export const handleDeleteEvent = async (setIsDeleteModal: (arg: boolean) => void, id: string) => {
   const docRef = doc(db, `events/${id}`);

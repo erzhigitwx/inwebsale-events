@@ -1,4 +1,25 @@
 {
   "authorized": "Authorized",
-  "my events": "My events"
+  "my events": "My events",
+  "Loading": "Loading",
+  "Error": "Something went wrong! Please try again later",
+  "You": "You",
+  "don't": "don't",
+  "have any events yet": "have any events yet",
+  "Create an event": "Create an event",
+  "name": "Name",
+  "status": "Status",
+  "start": "Start",
+  "host": "Host",
+  "moderator": "Moderator",
+  "access": "Access",
+  "chat": "Chat",
+  "options": "Options",
+  "sure to delete": "Do you really want to delete the event?",
+  "yes": "Yes",
+  "cancel": "Cancel",
+  "There is": "There is",
+  "no": "no",
+  "one events found": "one events found",
+  "events": "Events"
 }

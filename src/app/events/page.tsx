@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import { EventsPageContent } from "@/widgets/events-page-content/events-page-content";
 
 interface EventsProps {
 
@@ -6,8 +7,8 @@ interface EventsProps {
 
 const Events: FC<EventsProps> = () => {
   return (
-    <div className={"grid"}>
-      Events
+    <div>
+      <EventsPageContent />
     </div>
   );
 };

@@ -40,12 +40,11 @@ const CreateForm: FC = () => {
     setTimeout(() => {
       setIsSuccess(false);
     }, 3000);
+    return <SuccessPage/>;
   }
 
-  if (isSuccess) return <SuccessPage/>;
-
   return (
-    <main className={"mt-[30px]"}>
+    <main className={"py-8 dark:prose-darkMode"}>
       <h1 className={"text-center text-black text-2xl font-semibold dark:prose-darkMode"}>{t("creating events")}</h1>
       <form className={"flex flex-col justify-center items-center mt-[40px] gap-10"}
         onSubmit={(e) => handleSubmit({

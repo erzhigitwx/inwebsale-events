@@ -19,13 +19,11 @@ export default function RootLayout({
   const defaultTheme = (typeof window !== "undefined" ? localStorage.getItem("theme") : null) as theme || "light";
   const [theme, setTheme] = useState<theme>(defaultTheme);
   return (
-    <html lang="en">
+    <html lang="en" className={`${theme} w-full h-full`}>
       <Providers>
-        <body className={`${inter.className} ${theme}`}>
-          <div className={"dark:bg-dark-blue-light w-[100vw] h-[100vh]"}>
-            <Navbar setTheme={setTheme} theme={theme}/>
-            <div className={"px-[65px]"}>{children}</div>
-          </div>
+        <body className={`${inter.className} dark:bg-dark-blue-light w-full h-full`}>
+          <Navbar setTheme={setTheme} theme={theme}/>
+          <div className={"px-16 py-4"}>{children}</div>
         </body>
       </Providers>
     </html>
