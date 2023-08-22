@@ -1,18 +1,11 @@
 "use client";
 import React, { FC } from "react";
-import { useSession } from "next-auth/react";
-import { Session } from "next-auth";
+import { MainPageContent } from "@/widgets/main-page-content";
 
-interface HomeProps {
-
-}
-
-const Home: FC<HomeProps> = () => {
-  const { data }: { data: Session | null } = useSession();
-
+const Home: FC = () => {
   return (
     <main>
-      {data?.user?.name}
+      <MainPageContent />
     </main>
   );
 };

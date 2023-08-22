@@ -23,10 +23,19 @@ export const fetchEventsFx = createEffect<string, EventType[] | undefined>(async
   }
 });
 
+export const filterEventsFx = createEffect<string, EventType[]>(searchValue => {
+  const allEvents = $events.getState();
+  if(!searchValue.trim()) return allEvents;
+  return allEvents.filter(event =>
+    event.eventTitle.startsWith(searchValue) || event.hostName.startsWith(searchValue) || event.youtubeLink.startsWith(searchValue)
+  );
+});
+
 export const setLoading = createEvent<boolean>();
 export const setError = createEvent<boolean>();
 export const resetEvents = createEvent();
 
+export const $filteredEvents = createStore<EventType[]>([]);
 export const $loading = createStore<boolean>(false).on(setLoading, (prev: boolean, curr: boolean): boolean => curr);
 export const $error = createStore<boolean>(false).on(setError, (prev: boolean, curr: boolean): boolean => curr);
 export const $events = createStore<EventType[]>([])
@@ -34,7 +43,4 @@ export const $events = createStore<EventType[]>([])
     return result ? [...prevEvents, ...result] : prevEvents;
   })
   .reset(resetEvents);
-fetchEventsFx.fail.watch(({ error, params }) => {
-  console.error(params);
-  console.error(error);
-});
+$filteredEvents.on(filterEventsFx.doneData, (_, result) => result);

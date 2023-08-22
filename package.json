@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix\n"
+    "lint:ts:fix": "eslint \"*/*.{ts,tsx}\" --fix\n"
   },
   "dependencies": {
     "@firebase/app-types": "^0.9.0",

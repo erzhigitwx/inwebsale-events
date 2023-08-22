@@ -1,0 +1,1 @@
+export { MainPageContent } from "./UI/main-page-content";

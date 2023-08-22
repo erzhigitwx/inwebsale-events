@@ -1,0 +1,1 @@
+export { EventsPageContent } from "./UI/events-page-content";

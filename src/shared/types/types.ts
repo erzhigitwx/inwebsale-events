@@ -1,6 +1,5 @@
 import { FirebaseApp } from "firebase/app";
 import { Firestore } from "@firebase/firestore";
-import { bool } from "yup";
 
 export type theme = "dark" | "light";
 

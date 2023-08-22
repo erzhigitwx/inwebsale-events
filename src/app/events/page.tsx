@@ -1,11 +1,9 @@
+"use client";
+
 import React, { FC } from "react";
-import { EventsPageContent } from "@/widgets/events-page-content/events-page-content";
+import { EventsPageContent } from "@/widgets/events-page-content";
 
-interface EventsProps {
-
-}
-
-const Events: FC<EventsProps> = () => {
+const Events: FC = () => {
   return (
     <div>
       <EventsPageContent />

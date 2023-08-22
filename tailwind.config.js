@@ -44,7 +44,7 @@ module.exports = {
         },
         darkMode: {
           css: {
-            color: theme('colors.white'),
+            color: theme("colors.white"),
           }
         }
       }),

@@ -10,9 +10,6 @@ const NavbarNavigate: FC = () => {
       <Link href={"/events"}>
         <li className={"text-white hover:text-black"}>{t("events")}</li>
       </Link>
-      <Link href={"/contacts"}>
-        <li className={"text-white hover:text-black"}>{t("contacts")}</li>
-      </Link>
       <Link href={"create"}>
         <li className={"text-white hover:text-black"}>{t("create")}</li>
       </Link>

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { FC, useEffect, useState } from "react";
+import React, { FC, useState } from "react";
 import { useStore } from "effector-react";
 import { useSession } from "next-auth/react";
 // components
@@ -9,7 +9,7 @@ import { EventBlock } from "@/shared/UI/event/event-block";
 import { EventsNavbar } from "@/shared/UI/event/navbar/events-navbar";
 import { EventInfoPanel } from "@/shared/UI/event/info-panel/event-info-panel";
 // store
-import { $error, $events, $loading, fetchEventsFx, resetEvents } from "@/shared/UI/event/model";
+import { $error, $events, $filteredEvents, $loading } from "@/shared/UI/event/model";
 // types
 import { EventType } from "@/shared/types/types";
 import { TFunction } from "i18next";
@@ -17,25 +17,18 @@ import { Session } from "next-auth";
 
 interface EventsProps {
   isProfile: boolean;
+  isFetched: boolean;
   t: TFunction;
 }
 
-const Events: FC<EventsProps> = ({ isProfile, t }) => {
+const Events: FC<EventsProps> = ({ isProfile, t, isFetched }) => {
   const [openedEvent, setOpenedEvent] = useState<string>("");
-  const [isFetched, setIsFetched] = useState<boolean>(false);
   const { data }: { data: Session | null } = useSession();
-  const allEvents: EventType[] = useStore($events);
+  const allEvents: EventType[] = isProfile ? useStore($events) : useStore($filteredEvents);
   const isLoading: boolean = useStore($loading);
   const isError: boolean = useStore($error);
   const profileEvents: EventType[] = allEvents.filter((event: EventType) => data?.user?.email === event.email);
   const eventsToDisplay = isProfile ? profileEvents : allEvents;
-
-  useEffect(() => {
-    fetchEventsFx("events").finally(() => setIsFetched(true));
-    return () => {
-      resetEvents();
-    };
-  }, []);
 
   return (
     <div className="col-span-8">
