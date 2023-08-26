@@ -1,13 +1,11 @@
-import { EventType } from "@/shared/types/types";
-
 type getEventStatusType = {
   isPast: boolean,
   isInProgress: boolean
 }
 
-export function getEventStatus(event: EventType): getEventStatusType {
-  const eventStartDate = new Date(event.eventDate);
-  const eventTimeParts = event.eventTime.split(":");
+export function getEventStatus(eventDate: string, eventTime: string): getEventStatusType {
+  const eventStartDate = new Date(eventDate);
+  const eventTimeParts = eventTime.split(":");
   eventStartDate.setHours(Number(eventTimeParts[0]), Number(eventTimeParts[1]), 0, 0);
 
   const eventEndDate = new Date(eventStartDate);

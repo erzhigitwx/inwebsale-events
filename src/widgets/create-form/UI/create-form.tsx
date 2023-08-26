@@ -66,7 +66,7 @@ const CreateForm: FC = () => {
           data
         })}
       >
-        <div className={"grid grid-cols-4 gap-[145px] w-[945px]"}>
+        <div className={"grid grid-cols-1 lg:grid-cols-4 gap-32 lg:gap-32 lg:w-[945px]"}>
           <CreateFormLeft t={t} errors={errors}/>
           <CreateFormRight t={t} errors={errors} withPin={withPin} toSave={toSave} pin={pin}/>
         </div>

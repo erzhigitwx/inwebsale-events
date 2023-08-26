@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { $eventDate, $eventTime, eventDataChanged, eventTimeChanged } from "@/entities/create-inputs/model/date";
+import { $eventDate, $eventTime, eventDateChanged, eventTimeChanged } from "@/entities/create-inputs/model/date";
 import { useStore } from "effector-react";
 import { TFunction } from "i18next";
 
@@ -17,7 +17,7 @@ const CreateDate: FC<CreateDateProps> = ({ t }) => {
         <input
           type="date"
           value={date}
-          onChange={(e) => eventDataChanged(e.target.value)}
+          onChange={(e) => eventDateChanged(e.target.value)}
           className={"py-4 px-5 border-2 rounded-xl border-blue prose dark:bg-dark-blue-light dark:prose-darkMode dark:border-white"}
         />
         <input

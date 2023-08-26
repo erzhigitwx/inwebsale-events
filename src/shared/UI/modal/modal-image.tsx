@@ -1,5 +1,4 @@
 import React, { FC, ImgHTMLAttributes } from "react";
-
 interface ModalImageProps extends ImgHTMLAttributes<HTMLImageElement> {
   src: string,
   alt: string;

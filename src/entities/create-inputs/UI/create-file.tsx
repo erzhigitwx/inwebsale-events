@@ -23,7 +23,7 @@ const CreateFile: React.FC<CreateFileProps> = ({ text, t, error }) => {
     <>
       <button
         type={"button"}
-        className={"flex flex-row justify-between items-center gap-2 px-6 py-5 bg-blue rounded-xl w-[80%] hover:bg-opacity-60"}
+        className={"flex flex-row justify-between items-center gap-2 px-6 py-5 bg-blue rounded-xl lg:w-[80%] hover:bg-opacity-60"}
         onClick={handleClick}
       >
         {

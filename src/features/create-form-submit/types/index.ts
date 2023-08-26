@@ -43,5 +43,6 @@ export interface HandleSubmitParams {
   externalButton: string;
   eventDate: string;
   eventTime: string;
+  timeZone: string;
   data: Session | null;
 }

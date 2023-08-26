@@ -25,3 +25,21 @@
         transform: translateY(0);
     }
 }
+
+@media screen and (max-width: 1450px) {
+    html {
+        min-width: 1450px;
+    }
+}
+
+@media screen and (max-width: 976px) {
+    html {
+        min-width: auto;
+    }
+}
+
+@media screen and (max-width: 470px) {
+    html {
+        min-width: 470px;
+    }
+}

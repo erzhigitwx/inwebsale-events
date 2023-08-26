@@ -30,6 +30,7 @@ async function handleSubmit({
       externalButton,
       eventDate,
       eventTime,
+      timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
       ...withPin && { pin }
     };
     setErrors([]);

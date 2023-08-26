@@ -21,5 +21,10 @@
   "There is": "Здесь",
   "no": "нет",
   "one events found": "ни одного события",
-  "events": "События"
+  "events": "События",
+  "Type pin for event": "Введите pin-код для события",
+  "Invalid login password": "Неверный пароль для входа в событие",
+  "Verify": "Подтвердить",
+  "cancel": "Отмена",
+  "Search for event": "Искать мероприятие"
 }

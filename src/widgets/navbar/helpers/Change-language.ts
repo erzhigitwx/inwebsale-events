@@ -1,6 +1,7 @@
-import { i18n } from "i18next";
+import I18n from "@/shared/lib/i18next/i18n";
 
-export const toggleLanguage = (i18nInstance: i18n) => {
-  const newLanguage = i18nInstance.language === "en" ? "ru" : "en";
-  i18nInstance.changeLanguage(newLanguage);
+export const toggleLanguage = (i18n: typeof I18n) => {
+  const currentLanguage = i18n.language;
+  const newLanguage = currentLanguage === "en" ? "ru" : "en";
+  i18n.changeLanguage(newLanguage);
 };

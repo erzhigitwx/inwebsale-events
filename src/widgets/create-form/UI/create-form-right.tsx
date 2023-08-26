@@ -50,7 +50,7 @@ const CreateFormRight: FC<CreateFormRightProps> = ({ t, errors, withPin, toSave,
       <CreateDate t={t}/>
       <div className={"mt-12 flex flex-col justify-start items-start gap-3"}>
         <h3 className={"prose dark:prose-darkMode"}>{t("presentation")}:</h3>
-        <CreateFile text={t("Download PDF")} t={t} error={fileError}/>
+        <div className={"w-full flex justify-center"}><CreateFile text={t("Download PDF")} t={t} error={fileError}/></div>
       </div>
     </div>
   );

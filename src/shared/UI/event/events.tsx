@@ -59,7 +59,7 @@ const Events: FC<EventsProps> = ({ isProfile, t, isFetched }) => {
                       {eventsToDisplay.map((event, index) =>
                         <div key={event.createdAt.seconds.toString()}>
                           <EventBlock event={event} setOpenedEvent={setOpenedEvent} openedEvent={openedEvent} index={index} isProfile={isProfile} t={t}/>
-                          {openedEvent.includes(event.id) && <EventInfoPanel event={event}/>}
+                          {openedEvent.includes(event.id) && <EventInfoPanel event={event} t={t}/>}
                         </div>
                       )}
                     </div>

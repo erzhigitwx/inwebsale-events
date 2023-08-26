@@ -32,5 +32,6 @@ export type EventType = {
   toSave: boolean;
   withPin: boolean;
   youtubeLink: string;
+  timeZone: string;
   pin?: string;
 }

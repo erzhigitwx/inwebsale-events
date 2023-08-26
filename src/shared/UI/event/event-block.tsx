@@ -8,9 +8,10 @@ import { EventModal } from "@/shared/UI/event/modal/event-modal";
 import { ButtonIndicator } from "@/shared/UI";
 // types
 import { EventType } from "@/shared/types/types";
+import { TFunction } from "i18next";
 // helpers
 import { getEventStatus } from "@/shared/utils/get-event-status";
-import { TFunction } from "i18next";
+import { getUTCOffset } from "@/shared/UI/event/helpers/get-UTCoffset-by-timezone";
 
 interface EventBlockProps {
   event: EventType;
@@ -25,7 +26,8 @@ const EventBlock: FC<EventBlockProps> = ({ event, setOpenedEvent, openedEvent, i
   const [isDeleteModal, setIsDeleteModal] = useState<boolean>(false);
   const [showPinModal, setShowPinModal] = useState<boolean>(false);
   const [verifiedPins, setVerifiedPins] = useState<string[]>([]);
-  const { isPast, isInProgress } = getEventStatus(event);
+  const correctEventTime = getUTCOffset(event.timeZone, event.eventTime);
+  const { isPast, isInProgress } = getEventStatus(event.eventDate, correctEventTime);
 
   const handlePlusMinusClick = () => {
     // если это профиль, если это без пароля, если
@@ -45,11 +47,11 @@ const EventBlock: FC<EventBlockProps> = ({ event, setOpenedEvent, openedEvent, i
   if (isDeleteModal) return <EventModal setIsDeleteModal={setIsDeleteModal} id={event.id}/>;
 
   return (
-    <div className="grid grid-cols-[0.3fr,1fr,1fr,1fr,1fr,1fr,1fr,1fr,1fr] gap-4 items-center text-black text-medium text-base dark:prose-darkMode">
+    <div className="grid grid-cols-[0.3fr,1fr,0.5fr,0.4fr,0.3fr] lg:grid-cols-[0.3fr,1fr,1fr,1fr,1fr,1fr,1fr,1fr,1fr] gap-4 items-center text-black text-medium text-base dark:prose-darkMode">
       <p>{index + 1}</p>
       <div className={"flex flex-row justify-between items-center gap-2"}>
         <p className="max-w-[150px] transition-none">{event.eventTitle}</p>
-        {/* показ замка, если это не профиль, открывается при нажатии модалка, если правильно ввести пароль, показываться будет +- иконки*/}
+        {/* показ замка, если это не профиль + с паролью, открывается при нажатии модалка, если правильно ввести пароль, показываться будет +- иконки*/}
         {
           event.withPin && !isProfile && !verifiedPins.includes(event.id)
             ? <Image src={"./assets/images/lock.svg"} alt={"lock"} className="px-2 py-2 rounded-xl bg-gray list-none grid place-items-center bg-opacity-50" onClick={handleLockClick} width={40} height={40}/>
@@ -58,10 +60,10 @@ const EventBlock: FC<EventBlockProps> = ({ event, setOpenedEvent, openedEvent, i
             || <Image src={"./assets/images/plus-circle.svg"} alt={"plus icon"} onClick={handlePlusMinusClick} width={40} height={40} className={"hover:rotate-180 hover:scale-150"}/>
         }
       </div>
-      <ButtonIndicator className={`${isPast ? "bg-purple dark:bg-red" : isInProgress ? "bg-green-light dark:bg-green" : "bg-blue-light dark:bg-blue"}`}>{isPast ? "завершено" : isInProgress ? "в процессе" : "запланировано"}</ButtonIndicator>
-      <p className="text-center">{event.eventDate}, {event.eventTime}</p>
-      <p>{event.hostName}</p>
-      <p>{event.hostName}</p>
+      <ButtonIndicator className={`${isPast ? "bg-purple dark:bg-red" : isInProgress ? "bg-green-light dark:bg-green" : "bg-blue-light dark:bg-blue"} hidden lg:grid`}>{isPast ? "завершено" : isInProgress ? "в процессе" : "запланировано"}</ButtonIndicator>
+      <p className="text-center hidden lg:block">{event.eventDate} {correctEventTime}</p>
+      <p className={"hidden lg:block"}>{event.hostName}</p>
+      <p className={"hidden lg:block"}>{event.hostName}</p>
       <ButtonIndicator className={`${event.withPin ? "bg-purple dark:bg-red" : "bg-green-light dark:bg-green"}`}>{event.withPin ? "закрытый" : "открытый"}</ButtonIndicator>
       <ButtonIndicator className="bg-purple dark:bg-red">выкл</ButtonIndicator>
       {isProfile &&

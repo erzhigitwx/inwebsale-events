@@ -31,7 +31,7 @@ const EventPinModal: FC<EventPinModalProps> = ({ setIsOpen, t, pin, setVerifiedP
       <div className={"py-9 px-20 bg-white flex flex-col justify-center gap-4 items-between rounded-3xl text-center"} onClick={(e) => e.stopPropagation()}>
         <h1 className={"text-2xl text-semibold"}>{t("Type pin for event")}</h1>
         <Input className={"mt-8"} placeholder={"qwert123"} onChange={(e) => setPinValue(e.target.value)} value={pinValue}/>
-        {error && <p>{t("Invalid login password")}</p>}
+        {error && <p className={"text-red"}>{t("Invalid login password")}</p>}
         <div className={"flex flex-col justify-center items-center gap-3"}>
           <Button className={"w-72 h-14"} onClick={() => handleVerifyPin()}>{t("Verify")}</Button>
           <p className={"text-base text-red font-semibold w-72 h-14 grid place-items-center cursor-pointer hover:bg-gray-light"} onClick={() => setIsOpen(false)}>{t("cancel")}</p>

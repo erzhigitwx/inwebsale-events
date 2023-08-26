@@ -21,5 +21,10 @@
   "There is": "There is",
   "no": "no",
   "one events found": "one events found",
-  "events": "Events"
+  "events": "Events",
+  "Type pin for event": "Type pin for event",
+  "Invalid login password": "Invalid login password",
+  "Verify": "Verify",
+  "cancel": "cancel",
+  "Search for event": "Search for event"
 }

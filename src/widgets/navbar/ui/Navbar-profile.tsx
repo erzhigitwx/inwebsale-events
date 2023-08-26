@@ -21,7 +21,7 @@ const NavbarProfile: FC<NavbarProfileProps> = ({ data: session, status }) => {
         <>
           {session && 
             <div className={"flex flex-row justify-center gap-2"}>
-              <Link href={"/profile"} className={"flex flex-row justify-center items-center gap-[8px]"}>
+              <Link href={"/profile"} className={"flex flex-row justify-center items-center gap-[8px] hover:bg-white hover:p-2 hover:rounded-2xl hover:bg-opacity-20"}>
                 {session.user?.image && <Image src={session.user.image} alt={"avatar"} width={40} height={40} className={"h-[40px] w-[40px] rounded-3xl"}/>}
                 <p className={"text-white"}>
                   {session.user?.email}

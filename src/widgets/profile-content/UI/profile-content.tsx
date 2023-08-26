@@ -22,12 +22,12 @@ const ProfileContent: FC = () => {
   }, [data]);
 
   if (isLoading) {
-    return <Loader />;
+    return <Loader/>;
   }
 
   return (
-    <div className="grid grid-cols-10 gap-5 mt-6">
-      <div className="col-span-2 flex flex-col justify-start gap-14">
+    <div className="grid grid-cols-1 gap-5 mt-6 lg:grid-cols-10">
+      <div className="col-span-2 flex flex-col sm:flex-row justify-start gap-4 md:gap-14 lg:flex-col">
         {data?.user?.image &&
           <ModalImage src={data.user.image} alt={"avatar"} className={"w-60 h-60 p-1 border-4 rounded-3xl"} isOpen={isOpen} setIsOpen={setIsOpen} after={"w-[50vh] h-[50vh]"}/>
           ||
