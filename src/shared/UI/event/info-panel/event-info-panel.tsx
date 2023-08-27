@@ -28,7 +28,7 @@ const EventInfoPanel: FC<EventInfoPanelProps> = ({ event, t }) => {
       <hr className={"text-gray"}/>
       <div className={"mt-2 lg:ml-20 flex flex-col-reverse gap-8 lg:gap-0 lg:flex-row justify-between items-center"}>
         <div className={"flex flex-col justify-around gap-5"}>
-          <span className={"flex flex-row justify-start items-center gap-6"}><h3 className={"text-xl font-bold text-black dark:prose-darkMode"}>Ссылка на мероприятие:</h3><a href={"http://localhost:3000/events"}
+          <span className={"flex flex-row justify-start items-center gap-6"}><h3 className={"text-xl font-bold text-black dark:prose-darkMode"}>Ссылка на мероприятие:</h3><a href={"https://inwebsale-events-prod.vercel.app/events"}
             className={"text-blue"}>http://localhost:3000/events</a></span>
           <span className={"flex flex-row justify-start items-center gap-6"}><h3 className={"text-xl font-bold text-black dark:prose-darkMode"}>YouTube трансляция:</h3>{!!event.youtubeLink &&
             <a href={event.youtubeLink} className={"text-blue"}>{event.youtubeLink}</a> || <h3 className={"text-red"}>Not specified</h3>}</span>

@@ -29,7 +29,7 @@ const NavbarProfile: FC<NavbarProfileProps> = ({ data: session, status }) => {
               </Link>
               <Image src={"./assets/images/logout.svg"} alt={"logout"} width={24} height={24} onClick={() => signOut({ callbackUrl: "/" })} className={"w-[24px]"}/>
             </div>
-           || <Link href={"/api/auth/signin"} className={"text-white"}>{t("registration")}</Link>}
+           || <Link href={"/api/auth/signin"} className={"text-white flex justify-center hover:bg-white hover:p-2 hover:rounded-2xl hover:bg-opacity-20"}>{t("registration")}</Link>}
         </>
       }
     </>

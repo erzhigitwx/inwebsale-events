@@ -36,7 +36,7 @@ const BurgerMenu: FC<BurgerMenuProps> = ({ theme, setTheme }) => {
 
   return isOpen &&
     <header
-      className={"fixed z-50 top-0 left-0 right-0 bottom-0 h-[100vh] bg-blue rounded-b-[43px] py-20 dark:bg-dark-blue"}
+      className={"fixed z-50 top-0 left-0 right-0 bottom-0 h-[120vh] bg-blue rounded-b-[43px] py-20 dark:bg-dark-blue"}
       onClick={() => setIsOpen(false)}
     >
       <BurgerButton isOpen={isOpen} onClick={() => setIsOpen((prev) => !prev)}/>
@@ -52,7 +52,7 @@ const BurgerMenu: FC<BurgerMenuProps> = ({ theme, setTheme }) => {
       </div>
     </header>
     ||
-    <header className={"flex flex-row justify-between items-center bg-blue rounded-b-[43px] h-[74px] py-[10px] px-[65px] dark:bg-dark-blue"}>
+    <header className={"flex flex-row-reverse sm:flex-row justify-between items-center bg-blue rounded-b-[43px] h-[74px] py-[10px] px-[65px] dark:bg-dark-blue"}>
       <Link href={"/"}><Image src={"./assets/images/logo.svg"} alt={"logo"} width={164} height={56} className={"w-[164px] h-[56px]"}/></Link>
       <BurgerButton isOpen={isOpen} onClick={() => setIsOpen((prev) => !prev)}/>
     </header>;
